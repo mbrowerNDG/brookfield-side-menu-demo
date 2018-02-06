@@ -12,7 +12,7 @@ export class TabsPage {
   MyProgressRoot: any = 'MyProgressPage';
   MyTeamRoot: any = 'MyTeamPage';
   DocumentsRoot: any = 'DocumentsPage';
-  MyHomeRoot: any = 'MyHomePage';
+  MyHomeRoot: any = 'MyhomePage';
 
   myIndex: number;
 

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MenuController } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs'
+
 
 /**
  * Generated class for the SchedulePage page.
@@ -15,11 +18,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SchedulePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
   }
 
+
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
+
   }
 
 }

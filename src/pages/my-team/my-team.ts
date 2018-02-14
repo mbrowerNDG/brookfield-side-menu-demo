@@ -18,6 +18,12 @@ export class MyTeamPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  IsActivetab(){
+
+    return false;
+  }
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyTeamPage');
   }

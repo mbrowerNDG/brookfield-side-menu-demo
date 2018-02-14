@@ -4,7 +4,8 @@ import { ToDoListPage } from './../to-do-list/to-do-list'
 import { TutorialPage } from './../tutorial/tutorial'
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
-import {ViewChild} from '@angular/core'
+import { MenuController} from 'ionic-angular'
+import {ViewChild, } from '@angular/core'
 
 /**
  * Generated class for the MenuPage page.
@@ -18,7 +19,7 @@ export interface PageInterface {
   pageName: string;
   tabComponent?: any;
   index?: number;
-  icon: string;
+  icon?: string;
 }
 
 @IonicPage()
@@ -34,7 +35,7 @@ export class MenuPage {
   @ViewChild(Nav) nav: Nav;
 
   pages: PageInterface[] = [
-    { title: 'Schedule', pageName: 'SchedulePage',  icon: 'home' },
+    { title: 'Schedule', pageName: 'SchedulePage',  icon: 'home', },
     { title: 'Settings', pageName: 'SettingsPage',  icon: 'contacts' },
     { title: 'To-Do List', pageName: 'ToDoListPage', icon: 'shuffle'},
     { title: 'Tutorial', pageName: 'TutorialPage', icon: 'shuffle'},
@@ -55,9 +56,12 @@ export class MenuPage {
 
   constructor(public navCtrl: NavController) { }
 
+  getActiveChildNav(pageName){
+  console.log(pageName);
+}
   openPage(page: PageInterface) {
     let params = {};
-
+console.log(page.pageName)
     // The index is equal to the order of our tabs inside tabs.ts
     if (page.index) {
       params = { tabIndex: page.index };
@@ -66,20 +70,23 @@ export class MenuPage {
     // The active child nav is our Tabs Navigation
     if (this.nav.getActiveChildNav() && page.index != undefined) {
       this.nav.getActiveChildNav().select(page.index);
+
     } else {
       // Tabs are not active, so reset the root page
       // In this case: moving to or from SpecialPage
       this.nav.setRoot(page.pageName, params);
+      console.log(page.pageName)
     }
   }
 
-  isActive(page: PageInterface) {
+  isActive(page: PageInterface, istab: boolean) {
     // Again the Tabs Navigation
     let childNav = this.nav.getActiveChildNav();
 
     if (childNav) {
       if (childNav.getSelected() && childNav.getSelected().root === page.tabComponent) {
         return 'primary';
+
       }
       return;
     }
@@ -90,14 +97,11 @@ export class MenuPage {
     }
     return;
   }
-IsActivetab(page: PageInterface){
-  if(this.nav.getActiveChildNav() && page.index != undefined){
-    return false;
-  } else {
-    return true;
+
+  navTo(page){
+    this.navCtrl.setRoot(page);
   }
 
-}
 
 
 }

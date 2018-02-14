@@ -7,18 +7,26 @@
 
   <ion-content>
     <ion-list>
-      <button ion-item menuClose *ngFor="let p of pages;"  (click)="openPage(p)">
-          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
-          {{ p.title }}
-        </button>
-    </ion-list>
-    <hr>
-    <ion-list>
       <button ion-item menuClose *ngFor="let t of tabpages"  (click)="openPage(t)">
           <ion-icon item-start [name]="t.icon" [color]="isActive(t)"></ion-icon>
           {{ t.title }}
         </button>
     </ion-list>
+
+    <hr>
+    <ion-list>
+      <button ion-item menuClose *ngFor="let p of pages;"  (click)="openPage(p)">
+          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+          {{ p.title }}
+        </button>
+    </ion-list>
+    <!--<ion-list>
+    <button ion-item menuClose (click)="navTo('SchedulePage')">
+         <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+           {{ p.title }}
+
+        </button>
+    </ion-list>-->
   </ion-content>
 </ion-menu>
 

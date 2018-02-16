@@ -35,10 +35,10 @@ export class MenuPage {
   @ViewChild(Nav) nav: Nav;
 
   pages: PageInterface[] = [
-    { title: 'Schedule', pageName: 'SchedulePage',  icon: 'home', },
-    { title: 'Settings', pageName: 'SettingsPage',  icon: 'contacts' },
-    { title: 'To-Do List', pageName: 'ToDoListPage', icon: 'shuffle'},
-    { title: 'Tutorial', pageName: 'TutorialPage', icon: 'shuffle'},
+    { title: 'Schedule', pageName: 'SchedulePage',  icon: 'calendar', },
+    { title: 'Settings', pageName: 'SettingsPage',  icon: 'cog' },
+    { title: 'To-Do List', pageName: 'ToDoListPage', icon: 'clipboard'},
+    { title: 'Tutorial', pageName: 'TutorialPage', icon: 'help-circle'},
 
 
 
@@ -47,11 +47,11 @@ export class MenuPage {
   ];
   tabpages: PageInterface [] = [
 
-    { title: 'Dashboard', pageName: 'TabsPage',  tabComponent: 'DashboardPage', index: 0, icon: 'home' },
-    { title: 'My Progress', pageName: 'TabsPage',  tabComponent: 'MyprogressPage', index: 1,  icon: 'home', },
-    { title: 'My Team', pageName: 'TabsPage',  tabComponent: 'MyteamPage', index: 2,  icon: 'home', },
-    { title: 'My Home', pageName: 'TabsPage',  tabComponent: 'MyhomePage', index: 3,  icon: 'home', },
-    { title: 'Documents', pageName: 'TabsPage',  tabComponent: 'DocumentsPage', index: 4,  icon: 'home', },
+    { title: 'Dashboard', pageName: 'TabsPage',  tabComponent: 'DashboardPage', index: 0, icon: 'analytics' },
+    { title: 'My Progress', pageName: 'TabsPage',  tabComponent: 'MyprogressPage', index: 1,  icon: 'speedometer'},
+    { title: 'My Team', pageName: 'TabsPage',  tabComponent: 'MyteamPage', index: 2,  icon: 'contact' },
+    { title: 'My Home', pageName: 'TabsPage',  tabComponent: 'MyhomePage', index: 3,  icon: 'home'},
+    { title: 'Documents', pageName: 'TabsPage',  tabComponent: 'DocumentsPage', index: 4,  icon: 'copy'},
   ]
 
   constructor(public navCtrl: NavController) { }
